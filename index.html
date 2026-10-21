@@ -1,182 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selvamani S — Software Engineer (.NET) | Developer Portfolio</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 0 20px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 0; }
-        header { text-align: center; border-bottom: 1px solid #30363d; padding-bottom: 40px; margin-bottom: 40px; }
-        h1 { color: #f0f6fc; font-size: 2.5rem; margin-bottom: 10px; }
-        .subtitle { color: #58a6ff; font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; }
-        .hero-desc { color: #8b949e; font-size: 1rem; max-width: 850px; margin: 0 auto; }
-        section { margin-bottom: 40px; }
-        h2 { color: #f0f6fc; font-size: 1.8rem; border-bottom: 1px solid #30363d; padding-bottom: 8px; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background-color: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
-        .card h3 { color: #58a6ff; font-size: 1.2rem; margin-bottom: 12px; }
-        .card h4 { color: #58a6ff; font-size: 1.1rem; margin-bottom: 6px; }
-        .badge-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .badge { background-color: #21262d; color: #58a6ff; border: 1px solid #30363d; border-radius: 6px; padding: 4px 10px; font-size: 0.85rem; font-weight: 500; }
-        .meta { color: #8b949e; font-size: 0.9rem; margin-bottom: 10px; font-style: italic; }
-        a { color: #58a6ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        footer { text-align: center; border-top: 1px solid #30363d; padding-top: 20px; color: #8b949e; font-size: 0.9rem; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selvamani S – .NET Software Engineer</title>
+<meta name="description" content="Selvamani S is a .NET software engineer in Puducherry, India, building and modernizing government e-governance and revenue systems with C#, ASP.NET Core, SQL Server and PostgreSQL.">
+<meta property="og:title" content="Selvamani S – .NET Software Engineer">
+<meta property="og:description" content="Government e-governance and revenue systems on .NET 10: billing, payments, security and reporting.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f2f4f7">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Selvamani S","jobTitle":"Software Engineer (.NET)","address":{"@type":"PostalAddress","addressLocality":"Puducherry","addressCountry":"IN"},"email":"mailto:selvamani4525@gmail.com","sameAs":["https://www.linkedin.com/in/selvamani-s-989798234","https://github.com/Selva-mani-S"]}
+</script>
+<style>
+:root{
+  --paper:#f2f4f7; --panel:#ffffff; --ink:#101828; --muted:#4b5a6e; --line:#d3dae4;
+  --accent:#0a5c8a; --accent-soft:#e3eff7;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0e1621; --panel:#152030; --ink:#e8edf4; --muted:#9aa9bc; --line:#26364a;
+    --accent:#6cb6e6; --accent-soft:#17293b;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0e1621; --panel:#152030; --ink:#e8edf4; --muted:#9aa9bc; --line:#26364a;
+  --accent:#6cb6e6; --accent-soft:#17293b;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
+.layout{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:260px minmax(0,1fr);column-gap:64px}
+.side{position:sticky;top:0;align-self:start;padding:56px 0 40px;height:100vh;display:flex;flex-direction:column}
+.side h1{font-family:var(--serif);font-size:1.9rem;line-height:1.15;margin:0 0 6px;font-weight:700}
+.role{margin:0 0 4px;color:var(--accent);font-weight:600}
+.place{margin:0 0 28px;color:var(--muted);font-size:.95rem}
+.nav{display:flex;flex-direction:column;gap:4px;margin-bottom:28px}
+.nav a{color:var(--ink);text-decoration:none;padding:4px 0 4px 12px;border-left:2px solid var(--line)}
+.nav a:hover{border-left-color:var(--accent);color:var(--accent)}
+.links{margin-top:auto;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.theme{margin-top:18px;align-self:flex-start;background:none;border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:6px;font:inherit;font-size:.9rem;cursor:pointer}
+.theme:hover{border-color:var(--accent)}
+main{padding:56px 0 32px}
+section{margin-bottom:64px}
+h2{font-family:var(--serif);font-size:1.6rem;line-height:1.2;margin:0 0 20px;font-weight:700}
+h3{font-size:1.1rem;line-height:1.3;margin:0 0 4px}
+p{margin:0 0 14px;max-width:68ch}
+.lede{font-family:var(--serif);font-size:clamp(1.65rem,3.6vw,2.4rem);line-height:1.2;font-weight:700;margin:0 0 20px;max-width:24ch}
+.intro{font-size:1.1rem;color:var(--muted);max-width:60ch}
+.flow{list-style:none;margin:32px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:0}
+.flow li{position:relative;background:var(--panel);border:1px solid var(--line);padding:10px 14px;font-size:.92rem;margin-right:28px;margin-bottom:10px}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:100%;top:50%;width:28px;border-top:2px solid var(--accent)}
+.flow-note{font-size:.9rem;color:var(--muted);margin:6px 0 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin:36px 0 0;border-top:1px solid var(--line)}
+.facts div{padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--accent);line-height:1.2}
+.facts dd{margin:2px 0 0;font-size:.92rem;color:var(--muted)}
+.case{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);padding:24px 26px;margin-bottom:24px}
+.case .meta{color:var(--muted);font-size:.92rem;margin:0 0 16px}
+.case dl{margin:0;display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px 18px}
+.case dt{font-weight:700;font-size:.95rem}
+.case dd{margin:0;max-width:62ch}
+.case ul{margin:0;padding-left:18px}
+.case li{margin-bottom:4px}
+.job{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 24px;padding:18px 0;border-top:1px solid var(--line)}
+.job:last-of-type{border-bottom:1px solid var(--line)}
+.job .when{color:var(--muted);font-size:.92rem}
+.job p{margin:4px 0 0;font-size:.97rem}
+.skills{display:grid;grid-template-columns:170px minmax(0,1fr);gap:12px 24px;margin:0}
+.skills dt{font-weight:700}
+.skills dd{margin:0;color:var(--muted)}
+.repos{list-style:none;margin:0;padding:0}
+.repos li{padding:14px 0;border-top:1px solid var(--line)}
+.repos li:last-child{border-bottom:1px solid var(--line)}
+.repos a{font-weight:700}
+.repos p{margin:2px 0 0;color:var(--muted);font-size:.97rem}
+.edu p{margin:0 0 8px}
+.cta{display:inline-block;background:var(--accent);color:var(--paper);padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:700;margin:6px 12px 6px 0}
+.cta.alt{background:none;color:var(--accent);border:1px solid var(--accent)}
+.cta:hover{filter:brightness(1.1)}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);font-size:.9rem}
+@media (max-width:860px){
+  .layout{display:block;padding:0 18px}
+  .side{position:static;height:auto;padding:36px 0 8px}
+  .nav{flex-direction:row;flex-wrap:wrap;gap:6px 16px;margin-bottom:16px}
+  .nav a{border-left:0;padding:2px 0;text-decoration:underline;text-decoration-color:var(--line)}
+  .links{margin-top:0;flex-direction:row;flex-wrap:wrap;gap:6px 18px}
+  main{padding-top:24px}
+  .flow li{margin-right:0;margin-bottom:0;margin-top:0;width:100%}
+  .flow{flex-direction:column}
+  .flow li:not(:last-child)::after{left:24px;top:100%;width:0;height:12px;border-top:0;border-left:2px solid var(--accent)}
+  .flow li:not(:last-child){margin-bottom:12px}
+  .case{padding:20px 18px}
+  .case dl,.job,.skills{grid-template-columns:1fr}
+  .case dt{margin-top:6px}
+  .skills dt{margin-top:6px}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <header>
-            <h1>Selvamani S</h1>
-            <div class="subtitle">Software Engineer (.NET) | Backend & Full Stack</div>
-            <div class="hero-desc">
-                Puducherry, India &bull; 3.5+ Years Experience &bull; 690K+ Citizen & Consumer Records Served &bull; 70% SQL Storage Reduction via MinIO S3 &bull; 1,131+ Commits on WaterTax ERP &bull; ~40% PDF Memory Saved via QuestPDF
-            </div>
-        </header>
-
-        <!-- Technical Stack Section -->
-        <section>
-            <h2>Technical Stack</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Languages & Frameworks</h3>
-                    <div class="badge-list">
-                        <span class="badge">C# 14</span>
-                        <span class="badge">.NET 10 / 8 / Core 3.1</span>
-                        <span class="badge">ASP.NET Core (MVC, REST Web API)</span>
-                        <span class="badge">FastEndpoints</span>
-                        <span class="badge">SignalR</span>
-                        <span class="badge">LINQ</span>
-                        <span class="badge">SQL</span>
-                        <span class="badge">T-SQL</span>
-                        <span class="badge">JavaScript</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Architecture & Patterns</h3>
-                    <div class="badge-list">
-                        <span class="badge">Clean Architecture</span>
-                        <span class="badge">SOLID</span>
-                        <span class="badge">REPR Pattern</span>
-                        <span class="badge">CQRS (Source-Generated Mediator)</span>
-                        <span class="badge">Specification Pattern</span>
-                        <span class="badge">Result Pattern</span>
-                        <span class="badge">Refit</span>
-                        <span class="badge">Mapster</span>
-                        <span class="badge">FluentValidation</span>
-                        <span class="badge">.NET Aspire</span>
-                        <span class="badge">Coravel</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Databases & Storage</h3>
-                    <div class="badge-list">
-                        <span class="badge">MS SQL Server</span>
-                        <span class="badge">PostgreSQL (Npgsql)</span>
-                        <span class="badge">EF Core 10</span>
-                        <span class="badge">Dapper</span>
-                        <span class="badge">ADO.NET</span>
-                        <span class="badge">Stored Procedures</span>
-                        <span class="badge">MinIO (S3 Object Storage)</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Security & Reporting</h3>
-                    <div class="badge-list">
-                        <span class="badge">QuestPDF</span>
-                        <span class="badge">ClosedXML</span>
-                        <span class="badge">EPPlus</span>
-                        <span class="badge">PDF.js</span>
-                        <span class="badge">FIDO2 / WebAuthn Passkeys</span>
-                        <span class="badge">JWT</span>
-                        <span class="badge">2FA / OTP</span>
-                        <span class="badge">OpenTelemetry</span>
-                        <span class="badge">Serilog</span>
-                    </div>
-                </div>
-                <div class="card" style="grid-column: 1 / -1;">
-                    <h3>Frontend & DevOps</h3>
-                    <div class="badge-list">
-                        <span class="badge">HTMX</span>
-                        <span class="badge">Alpine.js</span>
-                        <span class="badge">Bootstrap 5</span>
-                        <span class="badge">Apache ECharts</span>
-                        <span class="badge">Chart.js</span>
-                        <span class="badge">DataTables</span>
-                        <span class="badge">MSTest</span>
-                        <span class="badge">Git</span>
-                        <span class="badge">GitLab CI/CD</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Enterprise Case Studies Section -->
-        <section>
-            <h2>Enterprise Case Studies</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="card">
-                    <h4>Municipal WaterTax ERP (NICSI / Puducherry Government)</h4>
-                    <div class="meta">Full Stack Developer at AeoLogic Technologies (Nov 2024 – Present)</div>
-                    <p>Core billing engines and counter collections for 221K+ consumers on .NET 10, FastEndpoints, and Clean Architecture; 70% SQL Server storage cut via MinIO S3 streaming ZIP compression; BBPS, GRAS, and LGRAMS payment gateway integration with Coravel reconciliation; FIDO2 passkeys, SignalR alerts, and QuestPDF notices.</p>
-                </div>
-                <div class="card">
-                    <h4>Employment Exchange Platform (NICSI / Labour Dept., Puducherry)</h4>
-                    <div class="meta">Software Developer at SISL Infotech (May 2023 – Oct 2024)</div>
-                    <p>Online registration, 3-year renewal, transfer, and NCO vacancy sponsorship across 4 regional exchanges for 472K+ job seekers in ASP.NET Core MVC and PostgreSQL; 430+ entity migration from .NET Core 3.1 to .NET 8; hybrid EF Core + Dapper queries; QuestPDF + zero-disk PDF.js streaming; STQC / CERT-In security compliance.</p>
-                </div>
-                <div class="card">
-                    <h4>B2B Seafood Export & Shipment Tracking Portal</h4>
-                    <div class="meta">Software Engineer Trainee at Harktechs (Apr 2022 – Apr 2023)</div>
-                    <p>ASP.NET Web Forms, AJAX, SQL Server stored procedures, and ADO.NET.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Open-Source Repositories Section -->
-        <section>
-            <h2>Featured Open-Source Repositories</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3><a href="https:&#47;&#47;github&#46;com&#47;Selva-mani-S&#47;dotnet-clean-architecture-template" target="_blank">dotnet-clean-architecture-template</a></h3>
-                    <p>Production-ready .NET Clean Architecture template featuring REPR pattern, CQRS, FastEndpoints, and FluentValidation.</p>
-                </div>
-                <div class="card">
-                    <h3><a href="https:&#47;&#47;github&#46;com&#47;Selva-mani-S&#47;fido2-passkey-remittance-service" target="_blank">fido2-passkey-remittance-service</a></h3>
-                    <p>Secure remittance service implementation leveraging WebAuthn / FIDO2 passkey authentication for passwordless security.</p>
-                </div>
-                <div class="card">
-                    <h3><a href="https:&#47;&#47;github&#46;com&#47;Selva-mani-S&#47;ProjectTemplate" target="_blank">ProjectTemplate</a></h3>
-                    <p>Starter application template designed for enterprise web services and API architectures.</p>
-                </div>
-                <div class="card">
-                    <h3><a href="https:&#47;&#47;github&#46;com&#47;Selva-mani-S&#47;guesthousebooking" target="_blank">guesthousebooking</a></h3>
-                    <p>Guest house reservation and management system built with modern .NET technologies.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section>
-            <h2>Education</h2>
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div class="card">
-                    <h4 style="color: #f0f6fc;">Master of Computer Applications (MCA)</h4>
-                    <div class="meta" style="margin-bottom: 0;">2020–2022 | Christ College of Engineering and Technology, Pondicherry University</div>
-                </div>
-                <div class="card">
-                    <h4 style="color: #f0f6fc;">Bachelor of Computer Applications (BCA)</h4>
-                    <div class="meta" style="margin-bottom: 0;">2017–2020 | Indira Gandhi College of Arts and Science, Pondicherry University</div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; Selvamani S &bull; GitHub Pages Portfolio</p>
-        </footer>
+<div class="layout">
+  <aside class="side">
+    <h1>Selvamani S</h1>
+    <p class="role">Software Engineer (.NET)</p>
+    <p class="place">Puducherry, India</p>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Selected work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#open-source">Open source</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="links">
+      <a href="mailto:selvamani4525@gmail.com">selvamani4525@gmail.com</a>
+      <a href="https://github.com/Selva-mani-S" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/selvamani-s-989798234" rel="noopener">LinkedIn</a>
     </div>
+    <button class="theme" type="button" id="theme" aria-label="Switch between light and dark theme">Switch theme</button>
+  </aside>
+
+  <main id="top">
+    <section aria-labelledby="intro">
+      <h2 id="intro" class="lede">I build and modernize the .NET systems behind government services.</h2>
+      <p class="intro">For 3.5+ years I have worked on public-sector billing, payment and registration platforms in C#, ASP.NET Core, SQL Server and PostgreSQL, in a team of up to three developers. I care about clean structure, safe upgrades and reports that print fast.</p>
+      <ol class="flow" aria-label="Typical system shape">
+        <li>Citizen or cashier</li>
+        <li>MVC web portal</li>
+        <li>FastEndpoints API</li>
+        <li>SQL Server, PostgreSQL, MinIO</li>
+      </ol>
+      <p class="flow-note">The shape of most systems I work on.</p>
+      <dl class="facts">
+        <div><dt>690K+</dt><dd>citizen and consumer records served across two platforms</dd></div>
+        <div><dt>70%</dt><dd>less SQL Server storage after moving attachments to MinIO</dd></div>
+        <div><dt>~40%</dt><dd>lower PDF memory use after replacing DevExpress with QuestPDF</dd></div>
+        <div><dt>.NET 3.1 to 10</dt><dd>two live systems upgraded across major versions</dd></div>
+      </dl>
+    </section>
+
+    <section id="work" aria-labelledby="work-h">
+      <h2 id="work-h">Selected work</h2>
+
+      <article class="case">
+        <h3>Municipal WaterTax ERP</h3>
+        <p class="meta">Client: NICSI / Government of Puducherry. Built at AeoLogic Technologies, Nov 2024 to present.</p>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Water billing, connection approvals and counter collections for 221K+ consumers needed one reliable system, with online payment and tight security.</dd>
+          <dt>What I built</dt>
+          <dd>
+            <ul>
+              <li>Billing engine with tariff slabs, arrears and surcharges, plus new-connection approval and counter-collection modules, on Ardalis Clean Architecture and FastEndpoints.</li>
+              <li>BBPS, GRAS and LGRAMS payment integrations, with idempotent Coravel jobs that reconcile dropped transactions.</li>
+              <li>FIDO2 passkeys, OTP-based 2FA, and SQL-backed sessions that allow one active session per user.</li>
+              <li>SignalR cashier notifications and QuestPDF demand notices, receipts and bills.</li>
+            </ul>
+          </dd>
+          <dt>Result</dt>
+          <dd>Database storage down 70% by streaming attachments to self-hosted MinIO with ZIP compression. Upgraded the platform from .NET 8 to .NET 10 and replaced MediatR with a source-generated Mediator after MediatR became commercial.</dd>
+        </dl>
+      </article>
+
+      <article class="case">
+        <h3>Employment Exchange Platform</h3>
+        <p class="meta">Client: NICSI / Labour Department, Puducherry. Built at SISL Infotech, May 2023 to Oct 2024.</p>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Four regional exchanges served 472K+ job seekers on a legacy .NET Core 3.1 codebase with costly, memory-heavy reporting.</dd>
+          <dt>What I built</dt>
+          <dd>
+            <ul>
+              <li>Online registration, 3-year renewal, regional transfer and vacancy sponsorship on ASP.NET Core MVC and PostgreSQL.</li>
+              <li>A 430+ entity EF Core model with composite keys (Exchange, Regyear, Regno).</li>
+              <li>Session-bound salt challenge-response login and middleware that enforces a single active session.</li>
+              <li>Sync with the National Career Service portal and the NIC SMS Gateway over WCF/SOAP and REST.</li>
+            </ul>
+          </dd>
+          <dt>Result</dt>
+          <dd>Moved the platform from .NET Core 3.1 to .NET 8. Replaced DevExpress with QuestPDF and ClosedXML for 15+ statutory reports, removing license costs and cutting PDF memory use by about 40%. Reports now stream into a PDF.js viewer without temporary files on the server.</dd>
+        </dl>
+      </article>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience</h2>
+      <div class="job">
+        <div class="when">Nov 2024 – Present</div>
+        <div><h3>Full Stack Developer, AeoLogic Technologies</h3><p>Municipal WaterTax ERP for NICSI and the Government of Puducherry. .NET 10, FastEndpoints, .NET Aspire, SQL Server.</p></div>
+      </div>
+      <div class="job">
+        <div class="when">May 2023 – Oct 2024</div>
+        <div><h3>Software Developer, SISL Infotech</h3><p>Employment Exchange platform for NICSI and the Labour Department. ASP.NET Core MVC, PostgreSQL, EF Core.</p></div>
+      </div>
+      <div class="job">
+        <div class="when">Apr 2022 – Apr 2023</div>
+        <div><h3>Software Engineer Intern, Harktechs</h3><p>B2B seafood export and shipment tracking portal. ASP.NET Web Forms, ADO.NET, SQL Server stored procedures.</p></div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="skills">
+        <dt>Languages and frameworks</dt><dd>C#, .NET 10 / 8 / Core 3.1, ASP.NET Core (MVC, REST Web API), FastEndpoints, SignalR, LINQ, SQL, JavaScript</dd>
+        <dt>Architecture</dt><dd>Clean Architecture, SOLID, Dependency Injection, REPR, CQRS with a source-generated Mediator, Specification pattern, Refit, .NET Aspire, Coravel</dd>
+        <dt>Data</dt><dd>SQL Server, PostgreSQL, Entity Framework Core, ADO.NET, stored procedures, MinIO (S3)</dd>
+        <dt>Security and reporting</dt><dd>FIDO2 / WebAuthn, JWT, 2FA / OTP, QuestPDF, ClosedXML, EPPlus, PDF.js, OpenTelemetry, Serilog</dd>
+        <dt>Frontend and tools</dt><dd>HTMX, Alpine.js, Bootstrap 5, Chart.js, DataTables, unit testing with MSTest, Git, GitLab CI/CD, Agile, AI coding tools</dd>
+      </dl>
+    </section>
+
+    <section id="open-source" aria-labelledby="oss-h">
+      <h2 id="oss-h">Open source</h2>
+      <ul class="repos">
+        <li><a href="https://github.com/Selva-mani-S/dotnet-clean-architecture-template" rel="noopener">dotnet-clean-architecture-template</a><p>A .NET Clean Architecture starter with the REPR pattern, CQRS, FastEndpoints and FluentValidation.</p></li>
+        <li><a href="https://github.com/Selva-mani-S/fido2-passkey-remittance-service" rel="noopener">fido2-passkey-remittance-service</a><p>A remittance service that signs users in with WebAuthn / FIDO2 passkeys instead of passwords.</p></li>
+        <li><a href="https://github.com/Selva-mani-S/ProjectTemplate" rel="noopener">ProjectTemplate</a><p>A starter template for enterprise web services and APIs.</p></li>
+        <li><a href="https://github.com/Selva-mani-S/guesthousebooking" rel="noopener">guesthousebooking</a><p>A guest house reservation and management system built on .NET.</p></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="edu-h" class="edu">
+      <h2 id="edu-h">Education</h2>
+      <p><strong>Master of Computer Applications</strong>, 2020 – 2022. Christ College of Engineering and Technology, Pondicherry University.</p>
+      <p><strong>Bachelor of Computer Applications</strong>, 2017 – 2020. Indira Gandhi College of Arts and Science, Pondicherry University.</p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <p>I’m open to .NET backend and full stack roles. Email is the quickest way to reach me.</p>
+      <a class="cta" href="mailto:selvamani4525@gmail.com">Email me</a>
+      <a class="cta alt" href="Selvamani_S_Resume.pdf">Download resume (PDF)</a>
+    </section>
+
+    <footer>Selvamani S, Puducherry, India</footer>
+  </main>
+</div>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||
+      (!root.getAttribute('data-theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
